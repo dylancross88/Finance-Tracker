@@ -21,6 +21,6 @@ init_friend_lookup = function() {
   });
 }
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   init_friend_lookup();
 })

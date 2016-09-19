@@ -18,6 +18,11 @@ class UsersController < ApplicationController
       redirect_to my_friends_path, flash[:error] = "Error adding user as your friend"
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @user_stocks = @user.stocks
+  end
 
   def search
     @users = User.search(params[:search_param])
